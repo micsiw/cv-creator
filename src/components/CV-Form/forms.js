@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import Education from "./education";
+import Personal from "./personal";
 
 class Forms extends Component {
   render() {
     return (
       <div className="forms">
-        <input type="text"></input>
+        <Personal />
+        <Education />
       </div>
     );
   }
