@@ -1,0 +1,24 @@
+.display-wrapper {
+  flex: 1;
+  border: 1px solid black;
+  min-width: 720px;
+  max-width: 800px;
+  aspect-ratio: 1 / 1.4142135623730950488016887242097;
+}
+
+.display {
+  height: 100%;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 0.7fr / 1fr 2fr;
+  padding: 5% 6%;
+  padding-right: 3%;
+}
+
+.experience {
+  grid-column: 2;
+  grid-row: 2 / span 4;
+}
+
+.display > * {
+  border: 1px solid black;
+}
