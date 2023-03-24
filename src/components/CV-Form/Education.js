@@ -10,11 +10,6 @@ class Education extends Component {
     };
     this.handleAdd = this.handleAdd.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
-    this.saySiema = this.saySiema.bind(this);
-  }
-
-  saySiema() {
-    console.log("siema");
   }
 
   handleAdd() {

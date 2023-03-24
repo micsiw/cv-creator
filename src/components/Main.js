@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Forms from "./CV-Form/forms";
-import Display from "./CV-Display/display";
+import Forms from "./CV-Form/Forms";
+import Display from "./CV-Display/Display";
 import "../styles/Main.css";
 
 class Main extends Component {
