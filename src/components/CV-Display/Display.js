@@ -1,4 +1,11 @@
 import React, { Component } from "react";
+import PhotoDisplay from "./Photo-display";
+import IntroductionDisplay from "./Introduction-display";
+import ContactDisplay from "./Contact-display";
+import ExperienceDisplay from "./Experience-display";
+import EducationDisplay from "./Education-display";
+import SkillsDisplay from "./Skills-display";
+import LanguagesDisplay from "./Languages-display";
 import "../../styles/Display.css";
 
 class Display extends Component {
@@ -6,13 +13,22 @@ class Display extends Component {
     return (
       <div className="display-wrapper">
         <div className="display">
-          <div className="photo">PHOTO</div>
-          <div className="introduction">Introduction</div>
-          <div className="contact">Contact</div>
-          <div className="experience">Experience</div>
-          <div className="education">Education</div>
-          <div className="skills">Skills</div>
-          <div className="language">Language</div>
+          <PhotoDisplay />
+          <IntroductionDisplay
+            firstName={this.props.firstName}
+            lastName={this.props.lastName}
+            jobTitle={this.props.jobTitle}
+            personalDescription={this.props.personalDescription}
+          />
+          <ContactDisplay
+            phoneNumber={this.props.phoneNumber}
+            email={this.props.email}
+            address={this.props.address}
+          />
+          <ExperienceDisplay />
+          <EducationDisplay />
+          <SkillsDisplay />
+          <LanguagesDisplay />
         </div>
       </div>
     );

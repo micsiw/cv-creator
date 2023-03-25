@@ -9,7 +9,15 @@ class Forms extends Component {
   render() {
     return (
       <div className="forms">
-        <Personal />
+        <Personal
+          onFirstNameChange={this.props.onFirstNameChange}
+          onLastNameChange={this.props.onLastNameChange}
+          onJobTitleChange={this.props.onJobTitleChange}
+          onPhoneNumberChange={this.props.onPhoneNumberChange}
+          onEmailChange={this.props.onEmailChange}
+          onAddressChange={this.props.onAddressChange}
+          onPersonalDescriptionChange={this.props.onPersonalDescriptionChange}
+        />
         <Education />
         <Skills />
         <Languages />
