@@ -14,6 +14,8 @@ class Main extends Component {
     this.handleAddressChange = this.handleAddressChange.bind(this);
     this.handlePersonalDescriptionChange =
       this.handlePersonalDescriptionChange.bind(this);
+    this.handleEducationInputsChange =
+      this.handleEducationInputsChange.bind(this);
 
     this.state = {
       firstName: "",
@@ -23,6 +25,9 @@ class Main extends Component {
       email: "",
       address: "",
       personalDescription: "",
+      education: [
+        { id: 0, graduation: "2009", name: "Harvard", title: "graduate" },
+      ], // !!
     };
   }
 
@@ -54,6 +59,10 @@ class Main extends Component {
     this.setState({ personalDescription: pDescr });
   }
 
+  handleEducationInputsChange(educationInputs) {
+    this.setState({ education: educationInputs });
+  }
+
   render() {
     return (
       <div className="main">
@@ -65,6 +74,7 @@ class Main extends Component {
           onEmailChange={this.handleEmailChange}
           onAddressChange={this.handleAddressChange}
           onPersonalDescriptionChange={this.handlePersonalDescriptionChange}
+          onEducationInputsChange={this.handleEducationInputsChange}
         />
         <Display
           firstName={this.state.firstName}
@@ -74,6 +84,7 @@ class Main extends Component {
           email={this.state.email}
           address={this.state.address}
           personalDescription={this.state.personalDescription}
+          education={this.state.education}
         />
       </div>
     );

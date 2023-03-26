@@ -18,7 +18,9 @@ class Forms extends Component {
           onAddressChange={this.props.onAddressChange}
           onPersonalDescriptionChange={this.props.onPersonalDescriptionChange}
         />
-        <Education />
+        <Education
+          onEducationInputsChange={this.props.onEducationInputsChange}
+        />
         <Skills />
         <Languages />
         <Experience />

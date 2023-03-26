@@ -3,9 +3,6 @@ import React, { Component } from "react";
 class Personal extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      firstName: "",
-    };
 
     this.setFirstName = this.setFirstName.bind(this);
     this.setLastName = this.setLastName.bind(this);
@@ -52,49 +49,42 @@ class Personal extends Component {
           type="text"
           id="first-name"
           placeholder="First name"
-          value={this.props.firstName}
           onChange={this.setFirstName}
         />
         <input
           type="text"
           id="last-name"
           placeholder="Last name"
-          value={this.props.lastName}
           onChange={this.setLastName}
         />
         <input
           type="text"
           id="job-title"
           placeholder="Job title"
-          value={this.props.jobTitle}
           onChange={this.setJobTitle}
         />
         <input
           type="text"
           id="phone"
           placeholder="Phone number"
-          value={this.props.phoneNumber}
           onChange={this.setPhoneNumber}
         />
         <input
           type="email"
           id="email"
           placeholder="E-mail"
-          value={this.props.email}
           onChange={this.setEmail}
         />
         <input
           type="text"
           id="address"
           placeholder="Address"
-          value={this.props.address}
           onChange={this.setAddress}
         />
         <input
           type="text"
           id="description"
           placeholder="Description"
-          value={this.props.personalDescription}
           onChange={this.setPersonalDescription}
         />
       </div>

@@ -26,7 +26,7 @@ class Display extends Component {
             address={this.props.address}
           />
           <ExperienceDisplay />
-          <EducationDisplay />
+          <EducationDisplay education={this.props.education} />
           <SkillsDisplay />
           <LanguagesDisplay />
         </div>
