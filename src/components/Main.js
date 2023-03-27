@@ -16,6 +16,11 @@ class Main extends Component {
       this.handlePersonalDescriptionChange.bind(this);
     this.handleEducationInputsChange =
       this.handleEducationInputsChange.bind(this);
+    this.handleSkillsInputsChange = this.handleSkillsInputsChange.bind(this);
+    this.handleLanguageInputsChange =
+      this.handleLanguageInputsChange.bind(this);
+    this.handleExperienceInputsChange =
+      this.handleExperienceInputsChange.bind(this);
 
     this.state = {
       firstName: "",
@@ -25,9 +30,10 @@ class Main extends Component {
       email: "",
       address: "",
       personalDescription: "",
-      education: [
-        { id: 0, graduation: "2009", name: "Harvard", title: "graduate" },
-      ], // !!
+      education: [],
+      skills: [],
+      languages: [],
+      experience: [],
     };
   }
 
@@ -63,6 +69,18 @@ class Main extends Component {
     this.setState({ education: educationInputs });
   }
 
+  handleSkillsInputsChange(skillsInputs) {
+    this.setState({ skills: skillsInputs });
+  }
+
+  handleLanguageInputsChange(languageInputs) {
+    this.setState({ languages: languageInputs });
+  }
+
+  handleExperienceInputsChange(experienceInputs) {
+    this.setState({ experience: experienceInputs });
+  }
+
   render() {
     return (
       <div className="main">
@@ -75,6 +93,9 @@ class Main extends Component {
           onAddressChange={this.handleAddressChange}
           onPersonalDescriptionChange={this.handlePersonalDescriptionChange}
           onEducationInputsChange={this.handleEducationInputsChange}
+          onSkillsInputsChange={this.handleSkillsInputsChange}
+          onLanguageInputsChange={this.handleLanguageInputsChange}
+          onExperienceInputsChange={this.handleExperienceInputsChange}
         />
         <Display
           firstName={this.state.firstName}
@@ -85,6 +106,9 @@ class Main extends Component {
           address={this.state.address}
           personalDescription={this.state.personalDescription}
           education={this.state.education}
+          skills={this.state.skills}
+          languages={this.state.languages}
+          experience={this.state.experience}
         />
       </div>
     );

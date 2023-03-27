@@ -10,6 +10,8 @@ class Education extends Component {
     this.handleAdd = this.handleAdd.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
     this.handleYearChange = this.handleYearChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
   }
 
   handleAdd() {
@@ -20,6 +22,8 @@ class Education extends Component {
           id={this.state.inputs.length}
           remove={this.handleRemove.bind(this, this.state.inputs.length)}
           handleYearChange={this.handleYearChange}
+          handleNameChange={this.handleNameChange}
+          handleTitleChange={this.handleTitleChange}
         />
       ),
       educationInputs: this.state.educationInputs.concat({
@@ -32,41 +36,48 @@ class Education extends Component {
   }
 
   handleRemove(id) {
+    const updatedInputs = this.state.inputs.filter(
+      (input) => input.key !== id.toString()
+    );
+    const updatedEducationInputs = this.state.educationInputs.filter(
+      (input) => input.id !== id
+    );
+
     this.setState({
-      inputs: this.state.inputs.filter((input) => input.key !== id.toString()),
+      inputs: updatedInputs,
+      educationInputs: updatedEducationInputs,
     });
+    this.props.onEducationInputsChange(updatedEducationInputs);
   }
-
-  // handleYearChange(id, yearInput) {
-  //   console.log("year input " + yearInput);
-  //   this.setState({
-  //     educationInputs: (this.state.educationInputs[] = {
-  //       id: "",
-  //       year: "1993",
-  //       name: "",
-  //       title: "",
-  //     }),
-  //   });
-  //   console.log(this.state.educationInputs);
-  //   this.props.onEducationInputsChange(this.state.educationInputs);
-  // }
-
-  // handleYearChange(id, yearInput) {
-  //   console.log("year input " + yearInput);
-  //   const { educationInputs } = this.state;
-  //   const recordIndex = educationInputs.findIndex((record) => record.id === id);
-  //   const updatedRecord = { ...educationInputs[recordIndex], year: yearInput };
-  //   const updatedInputs = [...educationInputs];
-  //   updatedInputs[recordIndex] = updatedRecord;
-
-  //   this.setState({ educationInputs: updatedInputs });
-  //   this.props.onEducationInputsChange(this.state.educationInputs);
-  // }
 
   handleYearChange(id, yearInput) {
     const updatedEducationInputs = this.state.educationInputs.map((record) => {
       if (record.id === id) {
         return { ...record, graduation: yearInput };
+      } else {
+        return record;
+      }
+    });
+    this.setState({ educationInputs: updatedEducationInputs });
+    this.props.onEducationInputsChange(updatedEducationInputs);
+  }
+
+  handleNameChange(id, nameInput) {
+    const updatedEducationInputs = this.state.educationInputs.map((record) => {
+      if (record.id === id) {
+        return { ...record, name: nameInput };
+      } else {
+        return record;
+      }
+    });
+    this.setState({ educationInputs: updatedEducationInputs });
+    this.props.onEducationInputsChange(updatedEducationInputs);
+  }
+
+  handleTitleChange(id, titleInput) {
+    const updatedEducationInputs = this.state.educationInputs.map((record) => {
+      if (record.id === id) {
+        return { ...record, title: titleInput };
       } else {
         return record;
       }

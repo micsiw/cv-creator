@@ -21,9 +21,11 @@ class Forms extends Component {
         <Education
           onEducationInputsChange={this.props.onEducationInputsChange}
         />
-        <Skills />
-        <Languages />
-        <Experience />
+        <Skills onSkillsInputsChange={this.props.onSkillsInputsChange} />
+        <Languages onLanguageInputsChange={this.props.onLanguageInputsChange} />
+        <Experience
+          onExperienceInputsChange={this.props.onExperienceInputsChange}
+        />
       </div>
     );
   }

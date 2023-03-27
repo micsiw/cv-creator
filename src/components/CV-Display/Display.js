@@ -25,10 +25,10 @@ class Display extends Component {
             email={this.props.email}
             address={this.props.address}
           />
-          <ExperienceDisplay />
+          <ExperienceDisplay experience={this.props.experience} />
           <EducationDisplay education={this.props.education} />
-          <SkillsDisplay />
-          <LanguagesDisplay />
+          <SkillsDisplay skills={this.props.skills} />
+          <LanguagesDisplay languages={this.props.languages} />
         </div>
       </div>
     );

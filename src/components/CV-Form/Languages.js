@@ -4,12 +4,12 @@ class Languages extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputs: [
-        <LanguagesInputs key={0} remove={this.handleRemove.bind(this, 0)} />,
-      ],
+      inputs: [],
+      languages: [],
     };
     this.handleAdd = this.handleAdd.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleLanguageChange = this.handleLanguageChange.bind(this);
   }
 
   handleAdd() {
@@ -17,16 +17,43 @@ class Languages extends Component {
       inputs: this.state.inputs.concat(
         <LanguagesInputs
           key={this.state.inputs.length}
+          id={this.state.inputs.length}
           remove={this.handleRemove.bind(this, this.state.inputs.length)}
+          handleLanguageChange={this.handleLanguageChange}
         />
       ),
+      languages: this.state.languages.concat({
+        id: this.state.languages.length,
+        language: "",
+      }),
     });
   }
 
   handleRemove(id) {
+    const updatedInputs = this.state.inputs.filter(
+      (input) => input.key !== id.toString()
+    );
+    const updatedLanguageInputs = this.state.languages.filter(
+      (input) => input.id !== id
+    );
+
     this.setState({
-      inputs: this.state.inputs.filter((input) => input.key !== id.toString()),
+      inputs: updatedInputs,
+      languages: updatedLanguageInputs,
     });
+    this.props.onLanguageInputsChange(updatedLanguageInputs);
+  }
+
+  handleLanguageChange(id, languageInput) {
+    const updatedLanguageInputs = this.state.languages.map((record) => {
+      if (record.id === id) {
+        return { ...record, language: languageInput };
+      } else {
+        return record;
+      }
+    });
+    this.setState({ languages: updatedLanguageInputs });
+    this.props.onLanguageInputsChange(updatedLanguageInputs);
   }
 
   render() {
@@ -41,10 +68,26 @@ class Languages extends Component {
 }
 
 class LanguagesInputs extends Component {
+  constructor(props) {
+    super(props);
+
+    this.id = this.props.id;
+    this.setLanguage = this.setLanguage.bind(this);
+  }
+
+  setLanguage(e) {
+    this.props.handleLanguageChange(this.id, e.target.value);
+  }
+
   render() {
     return (
       <div>
-        <input type="text" id="language" placeholder="Language" />
+        <input
+          type="text"
+          id="language"
+          placeholder="Language"
+          onChange={this.setLanguage}
+        />
         <button onClick={this.props.remove}>Remove</button>
       </div>
     );
