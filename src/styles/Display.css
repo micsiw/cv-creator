@@ -1,7 +1,7 @@
 .display-wrapper {
   flex: 1;
   border: 1px solid black;
-  min-width: 720px;
+  min-width: 800px;
   max-width: 800px;
   aspect-ratio: 1 / 1.4142135623730950488016887242097;
 }
@@ -9,16 +9,239 @@
 .display {
   height: 100%;
   display: grid;
-  grid-template: 1fr 1fr 1fr 1fr 0.7fr / 1fr 2fr;
-  padding: 5% 6%;
-  padding-right: 3%;
+  grid-template-columns: 1fr 2fr;
+}
+
+.photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.avatar {
+  width: 65%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: top center;
+}
+
+.display-left {
+  grid-column: 1;
+  grid-row: 1 / span 5;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.7fr;
+  color: white;
+  background-color: #323b4c;
+}
+
+.display-right {
+  grid-column: 2;
+  grid-row: 1 / span 5;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 0.7fr;
+  padding-right: 30px;
+  padding-left: 28px;
+}
+
+.title-section {
+  font-size: 1.8rem;
+  border-bottom: 1px solid rgb(172, 171, 171);
+}
+
+.contact,
+.education,
+.skills,
+.languages {
+  padding-left: 40px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.contact-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.contact-title + p {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.graduation-year {
+  font-size: 0.75rem;
+}
+
+.school-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.school-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.marker {
+  margin-right: 10px;
+  font-size: 0.7rem;
+}
+
+.skill {
+  font-size: 0.83rem;
+}
+
+.languages {
+  display: flex;
+  flex-direction: column;
+}
+
+.languages-content {
+  flex: 1;
+  padding: 16px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.introduction {
+  padding-top: 42px;
+  line-height: 1;
+}
+
+.name-section {
+  display: flex;
+  gap: 3%;
+  font-size: 2.8rem;
+  color: #323b4c;
+  flex-wrap: wrap;
+}
+
+.first-name {
+  font-weight: 900;
+}
+
+.last-name {
+  font-weight: 500;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: #323b4c;
+}
+
+.personal-description {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: #737373;
+  line-height: normal;
+  text-align: justify;
 }
 
 .experience {
-  grid-column: 2;
   grid-row: 2 / span 4;
 }
 
-.display > * {
-  border: 1px solid black;
+.experience-title {
+  font-size: 1.8rem;
+  color: #323b4c;
+  border-bottom: 1px solid #323b4c;
+}
+
+.experience-content {
+  margin-top: 24px;
+}
+
+.experience-position {
+  padding-bottom: 24px;
+  padding-left: 24px;
+  position: relative;
+  color: #737373;
+}
+
+.experience-position::before {
+  content: "";
+  height: 100%;
+  width: 1px;
+  position: absolute;
+  left: 0;
+  background: #323b4c;
+}
+
+.experience-position::after {
+  content: "";
+  background: white;
+  position: absolute;
+  top: 0;
+  left: -4px;
+  font-size: 70px;
+  padding: 2px;
+  border: 2px solid #323b4c;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-position:last-child {
+  padding-bottom: 0;
+}
+
+.experience-time {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.position {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin-top: 4px;
+}
+
+.experience-description {
+  font-size: 0.9rem;
+  text-align: justify;
+  margin-top: 4px;
 }

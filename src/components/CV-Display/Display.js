@@ -13,22 +13,26 @@ class Display extends Component {
     return (
       <div className="display-wrapper">
         <div className="display">
-          <PhotoDisplay />
-          <IntroductionDisplay
-            firstName={this.props.firstName}
-            lastName={this.props.lastName}
-            jobTitle={this.props.jobTitle}
-            personalDescription={this.props.personalDescription}
-          />
-          <ContactDisplay
-            phoneNumber={this.props.phoneNumber}
-            email={this.props.email}
-            address={this.props.address}
-          />
-          <ExperienceDisplay experience={this.props.experience} />
-          <EducationDisplay education={this.props.education} />
-          <SkillsDisplay skills={this.props.skills} />
-          <LanguagesDisplay languages={this.props.languages} />
+          <div className="display-left">
+            <PhotoDisplay />
+            <ContactDisplay
+              phoneNumber={this.props.phoneNumber}
+              email={this.props.email}
+              address={this.props.address}
+            />
+            <EducationDisplay education={this.props.education} />
+            <SkillsDisplay skills={this.props.skills} />
+            <LanguagesDisplay languages={this.props.languages} />
+          </div>
+          <div className="display-right">
+            <IntroductionDisplay
+              firstName={this.props.firstName}
+              lastName={this.props.lastName}
+              jobTitle={this.props.jobTitle}
+              personalDescription={this.props.personalDescription}
+            />
+            <ExperienceDisplay experience={this.props.experience} />
+          </div>
         </div>
       </div>
     );
