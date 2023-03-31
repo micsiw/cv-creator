@@ -4,6 +4,7 @@ import Personal from "./Personal";
 import Skills from "./Skills";
 import Languages from "./Languages";
 import Experience from "./Experience";
+import "../../styles/Forms.css";
 
 class Forms extends Component {
   render() {

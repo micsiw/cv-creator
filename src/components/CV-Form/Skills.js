@@ -59,9 +59,11 @@ class Skills extends Component {
   render() {
     return (
       <div className="skills-info">
-        <h3>Skills</h3>
+        <h3 className="form-title skills-title">Skills</h3>
         {this.state.inputs}
-        <button onClick={this.handleAdd}>Add new skill</button>
+        <button className="add-button" onClick={this.handleAdd}>
+          Add new skill
+        </button>
       </div>
     );
   }
@@ -81,14 +83,16 @@ class SkillsInputs extends Component {
 
   render() {
     return (
-      <div>
+      <div className="skill-inputs">
         <input
           type="text"
           id="skill"
           placeholder="Skill / Technology / Expertise"
           onChange={this.setSkill}
         />
-        <button onClick={this.props.remove}>Remove</button>
+        <button className="remove-button" onClick={this.props.remove}>
+          &#10006;
+        </button>
       </div>
     );
   }

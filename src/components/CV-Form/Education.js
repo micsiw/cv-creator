@@ -88,10 +88,15 @@ class Education extends Component {
 
   render() {
     return (
-      <div className="personal-info">
-        <h3>Education</h3>
+      <div className="education-info">
+        <h3 className="form-title education-title">Education</h3>
         {this.state.inputs}
-        <button onClick={this.handleAdd}>Add new position</button>
+        <button
+          className="education-add-button add-button"
+          onClick={this.handleAdd}
+        >
+          Add new position
+        </button>
       </div>
     );
   }
@@ -121,7 +126,7 @@ class EducationInputs extends Component {
 
   render() {
     return (
-      <div>
+      <div className="education-inputs">
         <input
           type="text"
           id="year"
@@ -140,7 +145,9 @@ class EducationInputs extends Component {
           placeholder="Your degree"
           onChange={this.setTitle}
         />
-        <button onClick={this.props.remove}>Remove</button>
+        <button className="remove-button" onClick={this.props.remove}>
+          &#10006;
+        </button>
       </div>
     );
   }

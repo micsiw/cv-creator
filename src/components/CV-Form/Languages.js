@@ -59,9 +59,11 @@ class Languages extends Component {
   render() {
     return (
       <div className="languages-info">
-        <h3>Languages</h3>
+        <h3 className="form-title language-title">Languages</h3>
         {this.state.inputs}
-        <button onClick={this.handleAdd}>Add new language</button>
+        <button className="add-button" onClick={this.handleAdd}>
+          Add new language
+        </button>
       </div>
     );
   }
@@ -81,14 +83,16 @@ class LanguagesInputs extends Component {
 
   render() {
     return (
-      <div>
+      <div className="language-inputs">
         <input
           type="text"
           id="language"
           placeholder="Language"
           onChange={this.setLanguage}
         />
-        <button onClick={this.props.remove}>Remove</button>
+        <button className="remove-button" onClick={this.props.remove}>
+          &#10006;
+        </button>
       </div>
     );
   }

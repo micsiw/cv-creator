@@ -34,6 +34,10 @@ button,
 textarea,
 select {
   font: inherit;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  border: 1px solid black;
+  padding: 2px 10px;
 }
 
 p,
@@ -64,6 +68,14 @@ h6 {
 
 .header,
 .footer {
-  background-color: darkblue;
-  color: white;
+  background-color: #e7ecef;
+  padding: 4px 0px;
+}
+
+.header {
+  padding-left: 30px;
+}
+
+.footer {
+  text-align: center;
 }

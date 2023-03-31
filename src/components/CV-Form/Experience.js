@@ -104,9 +104,11 @@ class Experience extends Component {
   render() {
     return (
       <div className="experience-info">
-        <h3>Experience</h3>
+        <h3 className="form-title experience-form-title">Experience</h3>
         {this.state.inputs}
-        <button onClick={this.handleAdd}>Add new position</button>
+        <button className="add-button" onClick={this.handleAdd}>
+          Add new position
+        </button>
       </div>
     );
   }
@@ -141,7 +143,7 @@ class ExperienceInputs extends Component {
 
   render() {
     return (
-      <div>
+      <div className="experience-inputs">
         <input
           type="text"
           id="time-frames"
@@ -160,13 +162,17 @@ class ExperienceInputs extends Component {
           placeholder="Position name"
           onChange={this.setPosition}
         />
-        <input
-          type="text"
+        <textarea
           id="job-description"
           placeholder="Description"
           onChange={this.setDescription}
         />
-        <button onClick={this.props.remove}>Remove</button>
+        <button
+          className="remove-button experience-remove"
+          onClick={this.props.remove}
+        >
+          &#10006;
+        </button>
       </div>
     );
   }

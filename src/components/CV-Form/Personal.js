@@ -44,7 +44,7 @@ class Personal extends Component {
   render() {
     return (
       <div className="personal-info">
-        <h3>Personal information</h3>
+        <h3 className="form-title personal-title">Personal information</h3>
         <input
           type="text"
           id="first-name"
@@ -64,7 +64,7 @@ class Personal extends Component {
           onChange={this.setJobTitle}
         />
         <input
-          type="text"
+          type="tel"
           id="phone"
           placeholder="Phone number"
           onChange={this.setPhoneNumber}
@@ -81,10 +81,10 @@ class Personal extends Component {
           placeholder="Address"
           onChange={this.setAddress}
         />
-        <input
-          type="text"
+        <textarea
+          maxlength="480"
           id="description"
-          placeholder="Description"
+          placeholder="Description (Max 480 characters)"
           onChange={this.setPersonalDescription}
         />
       </div>
