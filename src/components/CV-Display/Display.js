@@ -14,7 +14,7 @@ class Display extends Component {
       <div className="display-wrapper">
         <div className="display">
           <div className="display-left">
-            <PhotoDisplay />
+            <PhotoDisplay photo={this.props.photo} />
             <ContactDisplay
               phoneNumber={this.props.phoneNumber}
               email={this.props.email}

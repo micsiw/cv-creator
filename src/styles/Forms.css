@@ -22,7 +22,8 @@
   cursor: pointer;
 }
 
-.add-button {
+.add-button,
+.photo-upload-button {
   background-color: #323b4c;
   border-radius: 6px;
   border-style: none;
@@ -49,7 +50,9 @@
 }
 
 .add-button:hover,
-.add-button:focus {
+.add-button:focus,
+.photo-upload-button:hover,
+.photo-upload-button:focus {
   background-color: #465368;
 }
 
@@ -64,6 +67,12 @@
 
 #description {
   grid-column: 1 / 3;
+}
+
+.photo-input {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 8px;
 }
 
 .education-info {
@@ -141,4 +150,8 @@
 
 .experience-remove {
   grid-column: 1 / 3;
+}
+
+input[type="file"] {
+  display: none;
 }

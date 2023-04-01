@@ -82,7 +82,7 @@ class Personal extends Component {
           onChange={this.setAddress}
         />
         <textarea
-          maxlength="480"
+          maxLength="480"
           id="description"
           placeholder="Description (Max 480 characters)"
           onChange={this.setPersonalDescription}

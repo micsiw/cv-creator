@@ -4,12 +4,14 @@ import Personal from "./Personal";
 import Skills from "./Skills";
 import Languages from "./Languages";
 import Experience from "./Experience";
+import Photo from "./Photo";
 import "../../styles/Forms.css";
 
 class Forms extends Component {
   render() {
     return (
       <div className="forms">
+        <Photo onPhotoChange={this.props.onPhotoChange} />
         <Personal
           onFirstNameChange={this.props.onFirstNameChange}
           onLastNameChange={this.props.onLastNameChange}

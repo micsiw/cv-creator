@@ -6,6 +6,7 @@ import "../styles/Main.css";
 class Main extends Component {
   constructor(props) {
     super(props);
+    this.handlePhotoChange = this.handlePhotoChange.bind(this);
     this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
     this.handleLastNameChange = this.handleLastNameChange.bind(this);
     this.handleJobTitleChange = this.handleJobTitleChange.bind(this);
@@ -23,6 +24,7 @@ class Main extends Component {
       this.handleExperienceInputsChange.bind(this);
 
     this.state = {
+      photo: "/images/placeholder_avatar.png",
       firstName: "",
       lastName: "",
       jobTitle: "",
@@ -35,6 +37,10 @@ class Main extends Component {
       languages: [],
       experience: [],
     };
+  }
+
+  handlePhotoChange(photoUrl) {
+    this.setState({ photo: photoUrl });
   }
 
   handleFirstNameChange(fName) {
@@ -85,6 +91,7 @@ class Main extends Component {
     return (
       <div className="main">
         <Forms
+          onPhotoChange={this.handlePhotoChange}
           onFirstNameChange={this.handleFirstNameChange}
           onLastNameChange={this.handleLastNameChange}
           onJobTitleChange={this.handleJobTitleChange}
@@ -98,6 +105,7 @@ class Main extends Component {
           onExperienceInputsChange={this.handleExperienceInputsChange}
         />
         <Display
+          photo={this.state.photo}
           firstName={this.state.firstName}
           lastName={this.state.lastName}
           jobTitle={this.state.jobTitle}
