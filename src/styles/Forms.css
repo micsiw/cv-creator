@@ -50,9 +50,7 @@
 }
 
 .add-button:hover,
-.add-button:focus,
-.photo-upload-button:hover,
-.photo-upload-button:focus {
+.photo-upload-button:hover {
   background-color: #465368;
 }
 
@@ -154,4 +152,11 @@
 
 input[type="file"] {
   display: none;
+}
+
+.additional-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4px;
+  margin-top: 12px;
 }

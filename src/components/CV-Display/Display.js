@@ -12,7 +12,7 @@ class Display extends Component {
   render() {
     return (
       <div className="display-wrapper">
-        <div className="display">
+        <div className="display" ref={this.props.setRef}>
           <div className="display-left">
             <PhotoDisplay photo={this.props.photo} />
             <ContactDisplay
