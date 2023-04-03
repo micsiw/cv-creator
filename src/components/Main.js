@@ -97,7 +97,7 @@ class Main extends Component {
 
   handleExample() {
     this.setState({
-      photo: "images/template_avatar.png",
+      photo: "/images/template_avatar.png",
       firstName: "Jim",
       lastName: "Halpert",
       jobTitle: "Assistant Regional Manager",
