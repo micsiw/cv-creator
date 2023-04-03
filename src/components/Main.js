@@ -27,7 +27,7 @@ class Main extends Component {
     this.handleReset = this.handleReset.bind(this);
 
     this.state = {
-      photo: "/images/placeholder_avatar.png",
+      photo: "/images/placeholder-avatar.png",
       firstName: "",
       lastName: "",
       jobTitle: "",
@@ -97,7 +97,7 @@ class Main extends Component {
 
   handleExample() {
     this.setState({
-      photo: "/images/template_avatar.png",
+      photo: "/images/template-avatar.png",
       firstName: "Jim",
       lastName: "Halpert",
       jobTitle: "Assistant Regional Manager",
